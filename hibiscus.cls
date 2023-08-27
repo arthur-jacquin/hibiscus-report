@@ -14,15 +14,12 @@
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 
-% Margins, spacing
+% Margins
 \usepackage{geometry}
-% TODO: calibrate margins
-% \geometry{
-%     vmargin=??,
-%     hmargin=??,
-%     includeheadfoot=true
-% }
-% TODO: space between paragraph
+\geometry{
+    vmargin=3em,
+    includeheadfoot=true
+}
 
 % Table of content, file structure
 \setcounter{secnumdepth}{4}

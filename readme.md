@@ -19,7 +19,7 @@ That being said, here are some non-critical tips:
     start with a `\chapter` command. Call the file from `main.tex`.
 * Put figures in `figures/`, scripts in `scripts/`.
 * Avoid messing with default spacing, especially with absolute lengths.
-* If there are many files in scripts/ or figures/, use subfolders.
+* If there are many files in `scripts/` or `figures/`, use subfolders.
 * Some stuff needs multiple compilations, for example references. Compile twice
     before considering the output file stable. If you use a bibliography, it's
     even more subtle: refer to the according section.
@@ -60,11 +60,11 @@ that works collaboratively with the main LaTeX compiler:
 
 That's a bit of a hassle. Thus, the `bib` makefile target is provided for ease
 of use: whenever you make a new citation in the report, you just have to add the
-reference to bibliography.bib and then run `make bib`.
+reference to `bibliography.bib` and then run `make bib`.
 
 Only references cited in the report are generated in the report bibliography.
-Therefore, you can add as many references to bibliography.bib without polluting
-the output file.
+Therefore, you can add as many references to `bibliography.bib` without
+polluting the output file.
 
 
 ## Most common elements
@@ -98,7 +98,7 @@ the output file.
 
 ### Tables
 
-```
+```tex
 \begin{table}[ht]
     \centering
     \begin{tabular}{XXX}
@@ -129,13 +129,14 @@ the output file.
 \code{XXX}          % inline code
 
 % script
-\begin{lstlisting}[language=XXX, caption=XXX]
+\begin{lstlisting}[language=XXX, caption=XXX, label=XXX]
 XXX
 \end{lstlisting}
 
 % external script
-\lstinputlisting[language=XXX, caption=XXX]{scripts/XXX}
-\lstinputlisting[language=XXX, firstline=XXX, lastline=XXX, caption=XXX]{scripts/XXX}
+\lstinputlisting[language=XXX, caption=XXX, label=XXX]{scripts/XXX}
+\lstinputlisting[language=XXX, firstline=XXX, lastline=XXX, caption=XXX,
+    label=XXX]{scripts/XXX}
 ```
 
 
@@ -145,3 +146,4 @@ XXX
 * [Short bibliography reference](https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex#Reference_guide)
 * [Short scripts reference](https://www.overleaf.com/learn/latex/Code_listing#Reference_guide)
 * [Manipulating the table of content](https://tex.stackexchange.com/questions/48509/insert-list-of-figures-in-the-table-of-contents)
+* [Paragraph spacing](https://www.overleaf.com/learn/latex/Articles/How_to_change_paragraph_spacing_in_LaTeX#The_parskip_package)
