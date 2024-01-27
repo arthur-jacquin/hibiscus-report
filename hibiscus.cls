@@ -4,7 +4,11 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{hibiscus}
+\ifdefined\article
+\LoadClass[a4paper, 12pt]{article}
+\else
 \LoadClass[a4paper, 12pt]{report}
+\fi
 
 
 % PACKAGES
@@ -106,18 +110,30 @@
     \rule{\textwidth}{1pt} \\[0.8em]
 
     {\bf \Large \@title \\[0.3em]}
+\ifdefined\article
+    {\@context{} \\[0.8em]}
+\else
     {\@reporttype{} - \@context{} \\[0.8em]}
+\fi
 
+\ifdefined\article
+    {\@author \\[0.3em]}
+\else
     {\large \@author \\[0.3em]}
+\fi
     {\sc \@entity \\[0.3em]}
 
     \rule{\textwidth}{1pt}
 
+
+\ifdefined\article
+    \end{center}
+\else
     \vfill
     \today
     \end{center}
-
     \clearpage
+\fi
 }
 
 
@@ -141,23 +157,38 @@
 % REFERENCES
 
 \def \figureslist {
+\ifdefined\article
+    \phantomsection
+    \addcontentsline{toc}{section}{\listfigurename}
+\else
     \clearpage
     \phantomsection
     \addcontentsline{toc}{chapter}{\listfigurename}
+\fi
     \listoffigures
 }
 
 \def \tableslist {
+\ifdefined\article
+    \phantomsection
+    \addcontentsline{toc}{section}{\listtablename}
+\else
     \clearpage
     \phantomsection
     \addcontentsline{toc}{chapter}{\listtablename}
+\fi
     \listoftables
 }
 
 \def \scriptslist {
+\ifdefined\article
+    \phantomsection
+    \addcontentsline{toc}{section}{\lstlistlistingname}
+\else
     \clearpage
     \phantomsection
     \addcontentsline{toc}{chapter}{\lstlistlistingname}
+\fi
     \lstlistoflistings
 }
 
